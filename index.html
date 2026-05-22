@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,114 +6,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Travel Visa Assistant</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,sans-serif;background:#f0f4f8;min-height:100vh}
 .header{background:#0e7490;color:#fff;text-align:center;padding:2rem 1rem}
-.header h1{font-size:28px;font-weight:700;margin-bottom:8px}
-.header p{font-size:15px;opacity:0.9;margin-bottom:12px}
-.free-badge{display:inline-block;padding:6px 20px;border:2px solid #fff;border-radius:999px;font-size:13px;font-weight:600}
+.header h1{font-size:28px;margin-bottom:8px}
 .container{max-width:700px;margin:0 auto;padding:1.5rem 1rem}
-.info-box{background:#fff;border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
-.info-box h2{font-size:16px;font-weight:700;color:#1e293b;margin-bottom:1rem}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.info-item{display:flex;align-items:flex-start;gap:10px}
-.info-item .ico{font-size:20px;flex-shrink:0}
-.info-item strong{display:block;font-size:13px;font-weight:700;color:#1e293b}
-.info-item span{font-size:12px;color:#64748b}
-.form-box{background:#fff;border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+.form-box{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
 .form-group{display:flex;flex-direction:column;gap:6px}
-.form-group label{font-size:12px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:0.05em}
-.form-group select{padding:10px 12px;border:2px solid #cbd5e1;border-radius:8px;font-size:14px;color:#1e293b;background:#fff;cursor:pointer}
-.form-group select:focus{outline:none;border-color:#0e7490}
-.purpose-label{font-size:12px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px}
+.form-group label{font-size:12px;font-weight:700;color:#475569}
+.form-group select{padding:10px 12px;border:2px solid #cbd5e1;border-radius:8px;font-size:14px}
 .purpose-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
-.pbtn{position:relative;padding:16px 8px 12px;border:2px solid #cbd5e1;border-radius:10px;background:#fff;cursor:pointer;font-family:Arial,sans-serif;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;transition:all 0.15s}
-.pbtn .ico{font-size:24px;line-height:1}
-.pbtn .lbl{font-size:13px;font-weight:700;color:#1e293b}
-.pbtn .sub{font-size:11px;color:#64748b}
-.pbtn:hover{border-color:#0e7490}
+.pbtn{padding:14px 8px;border:2px solid #cbd5e1;border-radius:10px;background:#fff;cursor:pointer;font-size:13px;font-weight:700}
 .pbtn.on{border:2px solid #0e7490;background:#e0f2f7}
-.pbtn.on .lbl{color:#0c4a5a}
-.pbtn.on .sub{color:#0e6e7a}
-.pbtn.on::after{content:'✓';position:absolute;top:6px;right:8px;font-size:12px;font-weight:700;color:#0c4a5a}
-.go-btn{width:100%;padding:14px;border-radius:10px;background:#0e7490;color:#fff;border:none;font-size:16px;font-weight:700;cursor:pointer;font-family:Arial,sans-serif;transition:background 0.15s}
-.go-btn:hover{background:#0369a1}
-.go-btn:disabled{opacity:0.4;cursor:not-allowed}
-.err{font-size:13px;margin-top:10px;padding:10px 14px;background:#fee2e2;color:#b91c1c;border-radius:8px}
-.result{margin-top:1.5rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
-.result-head{padding:1rem 1.25rem;display:flex;align-items:center;gap:12px;background:#0e7490}
-.result-flags{font-size:26px;letter-spacing:-2px}
-.result-meta{flex:1}
-.result-meta h2{font-size:15px;font-weight:700;color:#fff}
-.result-meta p{font-size:12px;color:rgba(255,255,255,0.8);margin-top:2px}
-.result-badge{padding:4px 14px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap;border:2px solid rgba(255,255,255,0.7);color:#fff;background:rgba(255,255,255,0.2)}
-.result-body{padding:1.25rem}
-.section{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid #e2e8f0}
-.section:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
-.stitle{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#0e7490;margin-bottom:6px}
-.stitle.warn{color:#b45309}
-.scontent{font-size:14px;color:#1e293b;line-height:1.75}
-.scontent ul{padding-left:16px}
-.scontent li{margin-bottom:3px}
-.aff-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e2e8f0}
-.aff-btn{padding:12px 14px;border-radius:10px;border:2px solid #0e7490;background:#fff;font-family:Arial,sans-serif;font-size:13px;font-weight:700;color:#0e7490;transition:all 0.15s;display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none}
-.aff-btn:hover{background:#0e7490;color:#fff}
-.aff-note{font-size:11px;color:#94a3b8;text-align:center;margin-top:8px}
-.dots{display:flex;gap:6px;align-items:center;justify-content:center;padding:2.5rem}
-.dot{width:10px;height:10px;border-radius:50%;background:#0e7490;animation:blink 1.2s ease-in-out infinite}
-.dot:nth-child(2){animation-delay:.2s}
-.dot:nth-child(3){animation-delay:.4s}
-@keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
-.footer{text-align:center;padding:2rem 1rem;font-size:12px;color:#94a3b8}
+.go-btn{width:100%;padding:14px;border:none;background:#0e7490;color:#fff;font-size:16px;font-weight:700;border-radius:10px;cursor:pointer}
+.result{background:#fff;border-radius:12px;margin-top:1.5rem;padding:1.5rem}
+.err{color:#b91c1c;background:#fee2e2;padding:10px;border-radius:8px;margin-top:10px}
+.aff-btn{display:inline-block;margin-top:1rem;padding:10px 20px;background:#0e7490;color:#fff;text-decoration:none;border-radius:8px;margin-right:10px}
 </style>
 </head>
 <body>
 <div class="header">
 <h1>✈️ Travel Visa Assistant</h1>
 <p>AI-powered visa requirements for tourism, work and study worldwide</p>
-<div class="free-badge">100% FREE — No Registration Required</div>
 </div>
 <div class="container">
-<div class="info-box">
-<h2>ℹ️ What This App Does</h2>
-<div class="info-grid">
-<div class="info-item"><span class="ico">🛂</span><div><strong>Visa Requirements</strong><span>Find out exactly what visa you need for any country</span></div></div>
-<div class="info-item"><span class="ico">💊</span><div><strong>Prohibited Medications</strong><span>Know which medicines are banned at your destination</span></div></div>
-<div class="info-item"><span class="ico">💼</span><div><strong>Work and Study Visas</strong><span>Requirements for employment and student visas</span></div></div>
-<div class="info-item"><span class="ico">🔗</span><div><strong>Apply Directly</strong><span>Links to trusted visa application services</span></div></div>
-</div>
-</div>
 <div class="form-box">
 <div class="form-row">
-<div class="form-group"><label>Your Passport</label><select id="from"><option value="">Select your country...</option></select></div>
-<div class="form-group"><label>Destination Country</label><select id="to"><option value="">Select destination...</option></select></div>
+<div class="form-group">
+<label>Your Passport</label>
+<select id="from"></select>
 </div>
-<div class="purpose-label">Purpose of Travel</div>
+<div class="form-group">
+<label>Destination Country</label>
+<select id="to"></select>
+</div>
+</div>
+<div style="margin-bottom:10px;font-weight:700">Purpose of Travel</div>
 <div class="purpose-row">
-<button class="pbtn on" id="btn-tourism" onclick="pick('tourism')"><span class="ico">✈️</span><span class="lbl">Tourism</span><span class="sub">Holiday and visits</span></button>
-<button class="pbtn" id="btn-work" onclick="pick('work')"><span class="ico">💼</span><span class="lbl">Work</span><span class="sub">Employment visa</span></button>
-<button class="pbtn" id="btn-study" onclick="pick('study')"><span class="ico">📚</span><span class="lbl">Study</span><span class="sub">Student visa</span></button>
+<button class="pbtn on" id="btn-tourism" onclick="pick('tourism')">✈️ Tourism</button>
+<button class="pbtn" id="btn-work" onclick="pick('work')">💼 Work</button>
+<button class="pbtn" id="btn-study" onclick="pick('study')">📚 Study</button>
 </div>
-<button class="go-btn" id="go" onclick="search()">🔍 Find Visa Requirements</button>
+<button class="go-btn" onclick="search()">Find Visa Requirements</button>
 <div id="err"></div>
 <div id="out"></div>
 </div>
 </div>
-<div class="footer">© 2026 Travel Visa Assistant · Always verify with official embassy websites before travelling</div>
 <script>
-const COUNTRIES=[['AF','Afghanistan','🇦🇫'],['AL','Albania','🇦🇱'],['DZ','Algeria','🇩🇿'],['AO','Angola','🇦🇴'],['AR','Argentina','🇦🇷'],['AM','Armenia','🇦🇲'],['AU','Australia','🇦🇺'],['AT','Austria','🇦🇹'],['AZ','Azerbaijan','🇦🇿'],['BH','Bahrain','🇧🇭'],['BD','Bangladesh','🇧🇩'],['BY','Belarus','🇧🇾'],['BE','Belgium','🇧🇪'],['BJ','Benin','🇧🇯'],['BO','Bolivia','🇧🇴'],['BA','Bosnia','🇧🇦'],['BW','Botswana','🇧🇼'],['BR','Brazil','🇧🇷'],['BG','Bulgaria','🇧🇬'],['BF','Burkina Faso','🇧🇫'],['BI','Burundi','🇧🇮'],['KH','Cambodia','🇰🇭'],['CM','Cameroon','🇨🇲'],['CA','Canada','🇨🇦'],['CF','Central African Rep','🇨🇫'],['TD','Chad','🇹🇩'],['CL','Chile','🇨🇱'],['CN','China','🇨🇳'],['CO','Colombia','🇨🇴'],['CD','Congo DRC','🇨🇩'],['CG','Congo Rep','🇨🇬'],['CR','Costa Rica','🇨🇷'],['CI','Cote dIvoire','🇨🇮'],['HR','Croatia','🇭🇷'],['CU','Cuba','🇨🇺'],['CY','Cyprus','🇨🇾'],['CZ','Czech Republic','🇨🇿'],['DK','Denmark','🇩🇰'],['DJ','Djibouti','🇩🇯'],['DO','Dominican Rep','🇩🇴'],['EC','Ecuador','🇪🇨'],['EG','Egypt','🇪🇬'],['SV','El Salvador','🇸🇻'],['EE','Estonia','🇪🇪'],['ET','Ethiopia','🇪🇹'],['FI','Finland','🇫🇮'],['FR','France','🇫🇷'],['GA','Gabon','🇬🇦'],['GM','Gambia','🇬🇲'],['GE','Georgia','🇬🇪'],['DE','Germany','🇩🇪'],['GH','Ghana','🇬🇭'],['GR','Greece','🇬🇷'],['GT','Guatemala','🇬🇹'],['GN','Guinea','🇬🇳'],['HT','Haiti','🇭🇹'],['HN','Honduras','🇭🇳'],['HU','Hungary','🇭🇺'],['IS','Iceland','🇮🇸'],['IN','India','🇮🇳'],['ID','Indonesia','🇮🇩'],['IR','Iran','🇮🇷'],['IQ','Iraq','🇮🇶'],['IE','Ireland','🇮🇪'],['IT','Italy','🇮🇹'],['JM','Jamaica','🇯🇲'],['JP','Japan','🇯🇵'],['JO','Jordan','🇯🇴'],['KZ','Kazakhstan','🇰🇿'],['KE','Kenya','🇰🇪'],['XK','Kosovo','🇽🇰'],['KW','Kuwait','🇰🇼'],['KG','Kyrgyzstan','🇰🇬'],['LA','Laos','🇱🇦'],['LV','Latvia','🇱🇻'],['LB','Lebanon','🇱🇧'],['LR','Liberia','🇱🇷'],['LY','Libya','🇱🇾'],['LT','Lithuania','🇱🇹'],['LU','Luxembourg','🇱🇺'],['MG','Madagascar','🇲🇬'],['MW','Malawi','🇲🇼'],['MY','Malaysia','🇲🇾'],['ML','Mali','🇲🇱'],['MR','Mauritania','🇲🇷'],['MU','Mauritius','🇲🇺'],['MX','Mexico','🇲🇽'],['MD','Moldova','🇲🇩'],['MN','Mongolia','🇲🇳'],['ME','Montenegro','🇲🇪'],['MA','Morocco','🇲🇦'],['MZ','Mozambique','🇲🇿'],['MM','Myanmar','🇲🇲'],['NA','Namibia','🇳🇦'],['NP','Nepal','🇳🇵'],['NL','Netherlands','🇳🇱'],['NZ','New Zealand','🇳🇿'],['NI','Nicaragua','🇳🇮'],['NE','Niger','🇳🇪'],['NG','Nigeria','🇳🇬'],['MK','North Macedonia','🇲🇰'],['NO','Norway','🇳🇴'],['OM','Oman','🇴🇲'],['PK','Pakistan','🇵🇰'],['PS','Palestine','🇵🇸'],['PA','Panama','🇵🇦'],['PY','Paraguay','🇵🇾'],['PE','Peru','🇵🇪'],['PH','Philippines','🇵🇭'],['PL','Poland','🇵🇱'],['PT','Portugal','🇵🇹'],['QA','Qatar','🇶🇦'],['RO','Romania','🇷🇴'],['RU','Russia','🇷🇺'],['RW','Rwanda','🇷🇼'],['SA','Saudi Arabia','🇸🇦'],['SN','Senegal','🇸🇳'],['RS','Serbia','🇷🇸'],['SL','Sierra Leone','🇸🇱'],['SG','Singapore','🇸🇬'],['SK','Slovakia','🇸🇰'],['SI','Slovenia','🇸🇮'],['SO','Somalia','🇸🇴'],['ZA','South Africa','🇿🇦'],['SS','South Sudan','🇸🇸'],['KR','South Korea','🇰🇷'],['ES','Spain','🇪🇸'],['LK','Sri Lanka','🇱🇰'],['SD','Sudan','🇸🇩'],['SE','Sweden','🇸🇪'],['CH','Switzerland','🇨🇭'],['SY','Syria','🇸🇾'],['TW','Taiwan','🇹🇼'],['TJ','Tajikistan','🇹🇯'],['TZ','Tanzania','🇹🇿'],['TH','Thailand','🇹🇭'],['TG','Togo','🇹🇬'],['TN','Tunisia','🇹🇳'],['TR','Turkey','🇹🇷'],['TM','Turkmenistan','🇹🇲'],['UG','Uganda','🇺🇬'],['UA','Ukraine','🇺🇦'],['AE','UAE','🇦🇪'],['GB','United Kingdom','🇬🇧'],['US','United States','🇺🇸'],['UY','Uruguay','🇺🇾'],['UZ','Uzbekistan','🇺🇿'],['VE','Venezuela','🇻🇪'],['VN','Vietnam','🇻🇳'],['YE','Yemen','🇾🇪'],['ZM','Zambia','🇿🇲'],['ZW','Zimbabwe','🇿🇼']];
-const VISAHQ_ID='vaff18495';
-const IVISA_ID='YOUR_IVISA_ID';
+const COUNTRIES=[['AF','Afghanistan'],['AL','Albania'],['DZ','Algeria'],['AO','Angola'],['AR','Argentina'],['AM','Armenia'],['AU','Australia'],['AT','Austria'],['AZ','Azerbaijan'],['BH','Bahrain'],['BD','Bangladesh'],['BY','Belarus'],['BE','Belgium'],['BJ','Benin'],['BO','Bolivia'],['BA','Bosnia'],['BW','Botswana'],['BR','Brazil'],['BG','Bulgaria'],['BF','Burkina Faso'],['BI','Burundi'],['KH','Cambodia'],['CM','Cameroon'],['CA','Canada'],['CF','Central African Rep'],['TD','Chad'],['CL','Chile'],['CN','China'],['CO','Colombia'],['CD','Congo DRC'],['CG','Congo Rep'],['CR','Costa Rica'],['CI','Cote d\'Ivoire'],['HR','Croatia'],['CU','Cuba'],['CY','Cyprus'],['CZ','Czech Republic'],['DK','Denmark'],['DJ','Djibouti'],['DO','Dominican Rep'],['EC','Ecuador'],['EG','Egypt'],['SV','El Salvador'],['EE','Estonia'],['ET','Ethiopia'],['FI','Finland'],['FR','France'],['GA','Gabon'],['GM','Gambia'],['GE','Georgia'],['DE','Germany'],['GH','Ghana'],['GR','Greece'],['GT','Guatemala'],['GN','Guinea'],['HT','Haiti'],['HN','Honduras'],['HU','Hungary'],['IS','Iceland'],['IN','India'],['ID','Indonesia'],['IR','Iran'],['IQ','Iraq'],['IE','Ireland'],['IT','Italy'],['JM','Jamaica'],['JP','Japan'],['JO','Jordan'],['KZ','Kazakhstan'],['KE','Kenya'],['XK','Kosovo'],['KW','Kuwait'],['KG','Kyrgyzstan'],['LA','Laos'],['LV','Latvia'],['LB','Lebanon'],['LR','Liberia'],['LY','Libya'],['LT','Lithuania'],['LU','Luxembourg'],['MG','Madagascar'],['MW','Malawi'],['MY','Malaysia'],['ML','Mali'],['MR','Mauritania'],['MU','Mauritius'],['MX','Mexico'],['MD','Moldova'],['MN','Mongolia'],['ME','Montenegro'],['MA','Morocco'],['MZ','Mozambique'],['MM','Myanmar'],['NA','Namibia'],['NP','Nepal'],['NL','Netherlands'],['NZ','New Zealand'],['NI','Nicaragua'],['NE','Niger'],['NG','Nigeria'],['MK','North Macedonia'],['NO','Norway'],['OM','Oman'],['PK','Pakistan'],['PS','Palestine'],['PA','Panama'],['PY','Paraguay'],['PE','Peru'],['PH','Philippines'],['PL','Poland'],['PT','Portugal'],['QA','Qatar'],['RO','Romania'],['RU','Russia'],['RW','Rwanda'],['SA','Saudi Arabia'],['SN','Senegal'],['RS','Serbia'],['SL','Sierra Leone'],['SG','Singapore'],['SK','Slovakia'],['SI','Slovenia'],['SO','Somalia'],['ZA','South Africa'],['SS','South Sudan'],['KR','South Korea'],['ES','Spain'],['LK','Sri Lanka'],['SD','Sudan'],['SE','Sweden'],['CH','Switzerland'],['SY','Syria'],['TW','Taiwan'],['TJ','Tajikistan'],['TZ','Tanzania'],['TH','Thailand'],['TG','Togo'],['TN','Tunisia'],['TR','Turkey'],['TM','Turkmenistan'],['UG','Uganda'],['UA','Ukraine'],['AE','UAE'],['GB','United Kingdom'],['US','United States'],['UY','Uruguay'],['UZ','Uzbekistan'],['VE','Venezuela'],['VN','Vietnam'],['YE','Yemen'],['ZM','Zambia'],['ZW','Zimbabwe']];
+const VISAHQ='vaff18495';
 let purpose='tourism';
-function pick(p){purpose=p;['tourism','work','study'].forEach(x=>document.getElementById('btn-'+x).classList.toggle('on',x===p));}
-function setup(){const sorted=[...COUNTRIES].sort((a,b)=>a[1].localeCompare(b[1]));['from','to'].forEach(id=>{const sel=document.getElementById(id);sel.innerHTML=id==='from'?'<option value="">Select your country...</option>':'<option value="">Select destination...</option>';sorted.forEach(([code,name,flag])=>{const opt=document.createElement('option');opt.value=code;opt.dataset.n=name;opt.dataset.f=flag;opt.textContent=flag+' '+name;sel.appendChild(opt);});});}
-function getInfo(id){const sel=document.getElementById(id);const opt=sel.options[sel.selectedIndex];return{code:sel.value,name:opt.dataset.n||'',flag:opt.dataset.f||'🌍'};}
-function getBadge(text){const t=(text||'').toLowerCase();if(t.includes('visa-free')||t.includes('visa free'))return'Visa-Free';if(t.includes('on arrival'))return'Visa on Arrival';if(t.includes('evisa')||t.includes('e-visa'))return'eVisa Required';return'Visa Required';}
-function showResult(from,to,purposeLabel,text){const lines=text.split('\n').map(l=>l.trim()).filter(Boolean);const sections=[];let cur=null;for(const line of lines){const m=line.match(/^\*{0,2}([A-Z][A-Z\s\/]+):\*{0,2}\s*(.*)/);if(m&&m[1].length<40){if(cur)sections.push(cur);cur={title:m[1].trim(),items:m[2]?[m[2]]:[]}}else if(cur){cur.items.push(line.replace(/^[-*]\s*/,'').replace(/\*\*/g,''));}}if(cur)sections.push(cur);const statusSec=sections.find(s=>s.title.includes('STATUS'));const statusText=statusSec?statusSec.items.join(' '):text.slice(0,120);const badge=getBadge(statusText);const visa=!statusText.toLowerCase().includes('visa-free')&&!statusText.toLowerCase().includes('visa free');let body='';sections.forEach(s=>{const items=s.items.filter(Boolean);if(!items.length)return;const warn=s.title.includes('MEDIC')||s.title.includes('PROHIBIT')||s.title.includes('BANNED');body+='<div class="section"><div class="stitle '+(warn?'warn':'')+'">'+(warn?'⚠️ ':'')+s.title+'</div><div class="scontent">';if(items.length===1)body+='<p>'+items[0]+'</p>';else body+='<ul>'+items.map(i=>'<li>'+i+'</li>').join('')+'</ul>';body+='</div></div>';});if(!body)body='<div class="scontent"><p>'+text.replace(/\*\*/g,'')+'</p></div>';let aff='';if(visa){const f=from.name.toLowerCase().replace(/\s+/g,'-');const t2=to.name.toLowerCase().replace(/\s+/g,'-');aff='<div class="aff-row"><a class="aff-btn" href="https://www.ivisa.com/apply?from='+f+'&to='+t2+'&ref='+IVISA_ID+'" target="_blank"><span>Apply via iVisa</span><span style="font-size:11px;opacity:0.7">Fast online application</span></a><a class="aff-btn" href="https://www.visahq.com/'+t2+'-visa/?a_aid='+VISAHQ_ID+'" target="_blank"><span>Apply via VisaHQ</span><span style="font-size:11px;opacity:0.7">Expert visa service</span></a></div><p class="aff-note">Affiliate links — we may earn a small commission at no extra cost to you.</p>';}
-document.getElementById('out').innerHTML='<div class="result"><div class="result-head"><span class="result-flags">'+from.flag+to.flag+'</span><div class="result-meta"><h2>'+from.name+' to '+to.name+'</h2><p>'+purposeLabel+' · '+new Date().toLocaleDateString('en-GB',{month:'short',year:'numeric'})+'</p></div><span class="result-badge">'+badge+'</span></div><div class="result-body">'+body+aff+'</div></div>';document.getElementById('go').disabled=false;}
-async function search(){const from=getInfo('from');const to=getInfo('to');document.getElementById('err').innerHTML='';if(!from.code){document.getElementById('err').innerHTML='<div class="err">Please select your passport country.</div>';return;}if(!to.code){document.getElementById('err').innerHTML='<div class="err">Please select a destination country.</div>';return;}if(from.code===to.code){document.getElementById('err').innerHTML='<div class="err">Passport and destination cannot be the same.</div>';return;}const purposeLabel=purpose.charAt(0).toUpperCase()+purpose.slice(1);document.getElementById('go').disabled=true;document.getElementById('out').innerHTML='<div class="result"><div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>';try{const res=await fetch('/api/visa',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({from:from.name,to:to.name,purpose})});const data=await res.json();if(!data.result)throw new Error('No response');showResult(from,to,purposeLabel,data.result);}catch(e){document.getElementById('out').innerHTML='';document.getElementById('err').innerHTML='<div class="err">Could not fetch visa info. Please try again.</div>';document.getElementById('go').disabled=false;}}
+function pick(p){purpose=p;['tourism','work','study'].forEach(x=>{document.getElementById('btn-'+x).classList.toggle('on',x===p);});}
+function setup(){COUNTRIES.sort((a,b)=>a[1].localeCompare(b[1]));['from','to'].forEach(id=>{const sel=document.getElementById(id);COUNTRIES.forEach(([code,name])=>{const opt=document.createElement('option');opt.value=code;opt.textContent=name;sel.appendChild(opt);});});}
+async function search(){const from=document.getElementById('from').value;const to=document.getElementById('to').value;if(!from||!to){document.getElementById('err').innerHTML='<div class="err">Please select both countries</div>';return;}
+if(from===to){document.getElementById('err').innerHTML='<div class="err">Passport and destination must be different</div>';return;}
+document.getElementById('err').innerHTML='';document.getElementById('out').innerHTML='<div class="result">Loading visa information...</div>';
+const prompt='You are a visa expert. A '+from+' passport holder wants to travel to '+to+' for '+purpose+' in 2025-2026. Provide accurate visa information with these headers: VISA STATUS, ALLOWED STAY, REQUIREMENTS, HOW TO APPLY, COST, PROCESSING TIME, PROHIBITED MEDICATIONS, IMPORTANT NOTES. Be concise.';
+try{const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':'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'},body:JSON.stringify({model:'claude-opus-4-1-20250805',max_tokens:1000,messages:[{role:'user',content:prompt}]})});const data=await res.json();const text=data.content[0].text;document.getElementById('out').innerHTML='<div class="result"><p>'+text.replace(/\n/g,'<br>')+'</p><a class="aff-btn" href="https://www.visahq.com/?a_aid='+VISAHQ+'" target="_blank">Apply via VisaHQ</a></div>';}catch(e){document.getElementById('out').innerHTML='';document.getElementById('err').innerHTML='<div class="err">Could not fetch visa info. Please try again.</div>';}}
 setup();
 </script>
 </body>
 </html>
+```
